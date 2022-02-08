@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import MyButton from "../UI /button/MyButton";
 
 function Game() {
     const faces = ["heads", "tails"];
@@ -55,19 +56,19 @@ function Game() {
             onChange={e => setBet(e.target.value)}/>
             <div>
                 <h1>select a face</h1>
-                <button onClick={() => { zeroingout()
+                <MyButton onClick={() => { zeroingout()
                     setSelectedFace("heads")}}>
                     heads
-                </button>
-                <button onClick={() => { zeroingout()
+                </MyButton>
+                <MyButton onClick={() => { zeroingout()
                     setSelectedFace("tails")}}>
                     tails
-                </button>
+                </MyButton>
             </div>
             <p>you selected: {selectedFace}</p>
-            <button onClick={() => {
+            <MyButton onClick={() => {
                 flip();
-            }}>flip coin</button>
+            }}>flip coin</MyButton>
             {showResult()}
         </div>
     );

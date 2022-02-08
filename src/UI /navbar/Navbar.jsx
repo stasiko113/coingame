@@ -1,6 +1,7 @@
 import React, {useContext} from 'react';
 import {Link} from "react-router-dom";
 import {AuthContext} from "../../context";
+import MyButton from "../button/MyButton";
 
 const Navbar = () => {
     const {isAuth, setIsAuth} = useContext(AuthContext)
@@ -20,7 +21,7 @@ const Navbar = () => {
     return (
         <div className="navbar">
             {navOut()}
-            <button style={{marginLeft: '5px'}} onClick={() => logout()}>logout</button>
+            <MyButton style={{marginLeft: '5px'}} onClick={() => logout()}>logout</MyButton>
             <div className="navbar__links">
                 <ul className="menu">
                     <li><Link to="/game">Game</Link></li>

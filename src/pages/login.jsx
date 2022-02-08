@@ -1,5 +1,6 @@
 import React, {useContext, useState} from 'react';
 import {AuthContext} from "../context";
+import MyButton from "../UI /button/MyButton";
 
 const Login = () => {
     const {isAuth, setIsAuth} = useContext(AuthContext)
@@ -12,12 +13,15 @@ const Login = () => {
         localStorage.setItem('name', AuthName)
     }
     return (
-        <div>
-            <h1>Page for login</h1>
+        <div className="box">
             <form onSubmit={login}>
-                <input type="text" placeholder="Введите логин" onChange={e => setAuthName(e.target.value)}/>
-                <input type="password" placeholder="Введите пароль"/>
-                <button>Войти</button>
+                <div className="input-container">
+                    <input type="text" placeholder="Введите логин" onChange={e => setAuthName(e.target.value)}/>
+                </div>
+                <div className="input-container">
+                    <input type="password" placeholder="Введите пароль"/>
+                </div>
+                <MyButton>Войти</MyButton>
             </form>
         </div>
     );
